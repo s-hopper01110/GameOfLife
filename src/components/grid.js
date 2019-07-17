@@ -11,7 +11,7 @@ class Grid extends React.Component {
             for (let x = 0; x < this.props.columns; x++) 
             {
                 let cellId = i + "_" + x;
-                let cellClass = this.props.initialGrid[i][x] ? "box alive" : "box dead";
+                let cellClass = this.props.initialGrid[i][x] ? "cell on" : "cell off";
                 rowsArray.push(
                     <Cell
                     cellClass={cellClass}

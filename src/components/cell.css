@@ -1,0 +1,31 @@
+.cell {
+    display: inline-block;       
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+    }
+
+  .on {
+    background-color: #f4c;
+     }
+
+  
+  .off {
+    background-color: #05a;
+  }
+  
+  
+    
+  .cell:hover { 
+    background: #f95;
+  }
+  
+  .grid {
+    line-height: 0;
+    margin: auto;
+    margin-top: 20px;
+  }
+     
+

@@ -1,5 +1,7 @@
 import React from 'react';
 import Grid from './grid';
+import './cell.css';
+
 
 
 
@@ -7,9 +9,9 @@ import Grid from './grid';
 class Main extends React.Component {
     constructor() {
         super();
-        
-        this.rows = 15;
-        this.columns = 15;
+
+        this.rows = 35;
+        this.columns = 35;
 
         this.state = {
             generation: 0,
