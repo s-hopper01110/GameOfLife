@@ -8,8 +8,8 @@ class Buttons extends React.Component {
         <div>
             <button onClick={this.props.seed}>Seed</button>
              <button onClick={this.props.clear}>Clear</button>
-            {/* <button onClick={this.props.seed}>Seed</button>
-            <button onClick={this.props.seed}>Seed</button>  */}
+            <button onClick={this.props.startButton}>Start</button>
+            <button onClick={this.props.stopButton}>Stop</button> 
 
 
 
