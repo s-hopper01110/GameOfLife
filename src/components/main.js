@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from './grid';
+import Buttons from './butons';
 import './cell.css';
 
 
@@ -39,13 +40,34 @@ class Main extends React.Component {
         })
     }
 
+    //features:
+
+    seed = () => {
+        let gridCopy = clone(this.state.initialGrid);
+        for (let i = 0; i < this.rows; i++) {
+            for (let x = 0; x < this.columns; x++) {
+                if(Math.floor(Math.random() * 4) === 1) {
+                    gridCopy[i][x] = true;
+                }
+        }
+    }
+        this.setState({
+            initialGrid: gridCopy
+        });
+}
+
+    componentDidMount() {
+        this.seed();
+    }
+
 render() {
     return (
         <div>
             <h1> Conway's Game of Life</h1>
-            <button>Start</button>
-            <button>Stop</button>
-            <button>Clear</button>
+            <Buttons
+            seed={this.seed}
+            clear={this.clear}/>
+            
 
             <Grid 
             initialGrid={this.state.initialGrid} 
