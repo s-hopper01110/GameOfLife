@@ -1,0 +1,41 @@
+import React from 'react';
+import Cell from './cell';
+
+
+class Grid extends React.Component {
+    render() {
+        const width = this.props.columns * 16;
+        const rowsArray = [];
+
+        for (let i = 0; i < this.props.rows; i++) {
+            for (let x = 0; x < this.props.columns; x++) 
+            {
+                let cellId = i + "_" + x;
+                let cellClass = this.props.initialGrid[i][x] ? "box alive" : "box dead";
+                rowsArray.push(
+                    <Cell
+                    cellClass={cellClass}
+                    key={cellId}
+                    cellId={cellId}
+                    rows={i}
+                    columns={x}
+                    />
+                )
+
+
+            }
+        }
+
+        return (
+            <div className="grid" style={{width:width}}>
+            {rowsArray}
+            </div>
+        )       
+
+    }
+
+    
+
+}
+
+export default Grid;
