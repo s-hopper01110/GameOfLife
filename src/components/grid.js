@@ -11,6 +11,7 @@ class Grid extends React.Component {
             for (let x = 0; x < this.props.columns; x++) 
             {
                 let cellId = i + "_" + x;
+                //[i][j] - specific spot in the grid
                 let cellClass = this.props.initialGrid[i][x] ? "cell on" : "cell off";
                 rowsArray.push(
                     <Cell
@@ -19,6 +20,7 @@ class Grid extends React.Component {
                     cellId={cellId}
                     rows={i}
                     columns={x}
+                    cellSelection={this.props.cellSelection}
                     />
                 )
 
