@@ -4,7 +4,7 @@ import Cell from './cell';
 
 class Grid extends React.Component {
     render() {
-        const width = this.props.columns * 16;
+        const width = this.props.columns * 14;
         const rowsArray = [];
 
         for (let i = 0; i < this.props.rows; i++) {
