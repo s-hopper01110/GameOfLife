@@ -1,11 +1,11 @@
 import React from 'react';
 import { ButtonToolbar, DropdownButton, Dropdown } from 'react-bootstrap';
 
-// import './display.css';
+import './cell.css';
 
 class Buttons extends React.Component {
-    handleSelect = (evt) => {
-        this.props.gridSize(evt);
+    handleSelect = (e) => {
+        this.props.gridSize(e);
     }
  
     render () {
