@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from './grid';
-import Buttons from './butons';
+import Buttons from './buttons';
 import './cell.css';
 // import { ButtonToolbar, MenuItem, DropdownButton } from 'react-bootstrap';
 class Main extends React.Component {
@@ -67,7 +67,27 @@ class Main extends React.Component {
 			initialGrid: gridClear,
 			generation: 0
 		});
-	};
+    };
+    
+    gridSize = (size) => {
+        switch (size) {
+         case "1":
+             this.columns = 20;
+             this.rows = 10;
+         break;
+         case "2":
+             this.columns = 50;
+             this.rows = 30;
+         break;
+         default:
+             this.columns = 70;
+             this.rows = 50;
+        }
+        this.clear();
+
+        
+    }
+
 
 	start = () => {
 		let grid1 = this.state.initialGrid;
@@ -105,16 +125,27 @@ class Main extends React.Component {
 
 	render() {
 		return (
+            
 			<div>
 				<h1> Conway's Game of Life</h1>
+                <div className="div1">
+                
+                <ul>
+                <h3>Rules:</h3>
+                    <li>Any live cell with fewer than two live neighbors dies.</li>
+                   <li>Any live cell with two or three live neighbors lives on to the next generation</li>
+                   <li>Any live cell with more than three live neighbors dies</li>
+                   <li>Any dead cell with three live neighbors becomes a live cell</li>
+                </ul>   
+                </div>
 				<Buttons
 					seed={this.seed}
 					clear={this.clear}
 					startButton={this.startButton}
 					stopButton={this.stopButton}
-					// slow={this.slow}
-					// fast={this.fast}
-					// gridSize={this.gridSize}
+					slow={this.slow}
+					fast={this.fast}
+					gridSize={this.gridSize}
 				/>
 
 				<Grid
@@ -124,9 +155,12 @@ class Main extends React.Component {
 					cellSelection={this.cellSelection}
 				/>
 				<h2>Generation: {this.state.generation}</h2>
+
+
+                
 			</div>
 		);
-	}
+    }
 } //end
 
 function clone(arr) {

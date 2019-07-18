@@ -12,10 +12,15 @@ class Buttons extends React.Component {
         return(
         <div className = "button-center">
             <ButtonToolbar>
-            <button onClick={this.props.seed}>Seed</button>
-             <button onClick={this.props.clear}>Clear</button>
             <button onClick={this.props.startButton}>Start</button>
-            <button onClick={this.props.stopButton}>Stop</button> 
+            <button onClick={this.props.stopButton}>Stop</button>
+            <button onClick={this.props.clear}>Clear</button>
+            <button onClick={this.props.slow}>Slow</button>
+            <button onClick={this.props.fast}>Fast</button>
+            <button onClick={this.props.seed}>Seed</button>
+
+            
+            
             <DropdownButton 
                 title = "Grid Size"
                 id="size-menu"

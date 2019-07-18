@@ -1,8 +1,9 @@
 body {
-  background-image: url('https://images.unsplash.com/photo-1515261439133-0f6cfb098e04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background: url('https://images.unsplash.com/photo-1515261439133-0f6cfb098e04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80') no-repeat center center fixed;
 
-  background-repeat: no-repeat;
-  background-size: 100%;
+  /* background-repeat: no-repeat center center fixed; */
+  background-size: cover;
+  
   
 }
 
@@ -64,6 +65,7 @@ h2 {
   .button-center button{
     margin: 0 9.5px;
     border-radius: 50px;
+    border: 0;
     
   }
 
@@ -72,6 +74,52 @@ h2 {
   }
      
   .button-center button:hover{
-    background: #f71;
+    background: linear-gradient(to right, rgb(247, 243, 19),#f71);
   }
 
+  .div1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    height: 400px;
+    width: 20%;
+    background-color: #206;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    position: fixed;
+    opacity:0.9;
+    margin-top: 145px;
+    animation: slideMe .69s ease-in;
+
+  }
+
+  @keyframes slideMe{
+    0%{
+      transform: skewX(53deg) translateX(-500px);
+    }
+    100%{
+      transform: skew(0deg);
+    }
+
+  } 
+
+  ul {
+    padding-top:5px;
+    color:#2ff;
+    font-family: 'Athiti', sans-serif;
+    list-style-type: cjk-ideographic;
+
+  }
+
+  li{
+    padding:3px
+  }
+
+  h3{
+    margin-left: 20px;
+    text-decoration-line: underline;
+  }
+
+
+  
